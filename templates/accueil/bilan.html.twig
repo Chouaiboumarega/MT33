@@ -1,20 +1,28 @@
+
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AdminController!{% endblock %}
+{% block title %}Modifier User{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<h1>Bilan du mois</h1>
+<p>Renseignez vos données du mois</p>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/MT33/src/Controller/AdminController.php'|file_link(0) }}">src/Controller/AdminController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp64/www/MT33/templates/admin/index.html.twig'|file_link(0) }}">templates/admin/index.html.twig</a></code></li>
-    </ul>
-</div>
+{% if app.user and annonce.author is same as (app.user) %}
+        {{ form_start(form) }}
+            <div class="date">
+                {{ form_row(form.date) }}
+            </div>
+            {{ form_row(form.client) }}
+            {{ form_row(form.vehicule) }}
+            {{ form_row(form.distances) }}
+            {{ form_row(form.depenses) }}
+            {{ form_row(form.rotations) }}
+            {{ form_row(form.volumes) }}
+            {{ form_row(form.facturation) }}
+            {{ form_row(form.observations) }}
+            <button type="submit">Valider</button>
+        {{ form_end(form) }}
+{% {% endif %}%}
 {% endblock %}
+  
+
