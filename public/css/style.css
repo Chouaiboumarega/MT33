@@ -7,6 +7,9 @@
     display: block;
     width: 100%;
   }
+  .tete{
+    position: fixed;
+  }
   .smt {
     width: 394px;
     height: 132px;
@@ -374,13 +377,12 @@
   justify-content: center;
   
 }
-
+   
 .form {
   background: white;
   width: 69%;
   height: 66%;
-  margin-top: 159px;
-  margin-left: 16%;
+  margin-left: 19%;
  
 }
 .soumettre{
@@ -388,7 +390,7 @@
   color: white;
   border-color: rgba(250,67,24,1);
   width: 30%;
-  margin-top: 25%;
+  margin-top: 20%;
   margin-left: 36%;
 }
 .email{
@@ -409,24 +411,22 @@
 
 .form1{
   background: white;
-  width: 69%;
-  height: 46%;
-  margin-top: 238px;
-  margin-left: 16%;
+  width: 59%;
+  margin-left: 22%;
 }
 .connect{
   background-color: rgba(250,67,24,1);
   color: white;
   border-color: rgba(250,67,24,1);
-  width: 21%;
-  height: 10%;
-  margin-left: 40%;
+  width: 31%;
+  margin-left: 39%;
   margin-top: 20px;
+  
 }
 .email1{
-  width: 35%;
-  margin-left: 35%;
-  z-index: 1 1;
+  width: 89%;
+  margin-left: 4%;
+
 }
 .connecter{
   color: white;
@@ -434,4 +434,55 @@
  font-size: 30px;
  
 
+}
+/*facturation*/
+.facturation{
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+.facture{
+    background: white;
+    width: 59%;
+    margin-left: 22%;
+}
+.forme{
+  width: 40%;
+  position: relative;
+  margin-left: 36%;
+}
+.forme1{
+  width: 40%;
+  position: relative;
+  margin-top: 1%;
+  margin-left: 27%;
+  font-size: 132%;
+}
+.forme2{
+  position: relative;
+  margin-top: 1%;
+  margin-left: 22%;
+  font-size: 132%;
+}
+.forme3{
+  width: 40%;
+  position: relative;
+  margin-top: 1%;
+  margin-left: 28%;
+  font-size: 132%;
+}
+.forme4{
+  width: 40%;
+  position: relative;
+  margin-top: 1%;
+  margin-left: 27%;
+  font-size: 132%;
+}
+.valider{
+  background-color: rgba(250,67,24,1);
+  color: white;
+  border-color: rgba(250,67,24,1);
+  width: 21%;
+  margin-left: 41%;
+  margin-top: 20px;
 }

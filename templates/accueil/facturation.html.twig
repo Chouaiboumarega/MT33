@@ -3,18 +3,30 @@
 {% block title %}Modifier User{% endblock %}
 
 {% block body %}
-<h1>Facturation</h1>
-
-{{ form_start(form) }}
-    <div class="">
-    {{ form_row(form.date) }}
+<div class="V8">
     </div>
-    {{ form_row(form.client) }}
-    {{ form_row(form.colis) }}
-    {{ form_row(form.prixht) }}
-    {{ form_row(form.prixttc) }}
+<h1 class="facturation">Facturation</h1>
+<div class="facture">
+    {{ form_start(form) }}
+        <div class="forme">
+        {{ form_row(form.date) }}
+        </div>
+         <div class="forme1">
+        {{ form_row(form.client) }}
+        </div>
+        <div class="forme2">
+        {{ form_row(form.colis) }}
+        </div>
+        <div class="forme3">
+        {{ form_row(form.prixht) }}
+        </div>
+        <div class="forme4">
+        {{ form_row(form.prixttc) }}
+         </div>
+    </div>
     
-    <button type="submit">Valider</button>
-{{ form_end(form) }}
-    
+        <button class="valider" type="submit">Valider</button>
+   
+    {{ form_end(form) }}
+
 {% endblock %}

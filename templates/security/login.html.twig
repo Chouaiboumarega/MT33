@@ -5,6 +5,7 @@
 {% block body %}
 <h1 class="h3 mb-3 font-weight-normal connecter">Connectez-vous</h1>
     <div class="V8">
+    </div>
         <div class="form1">
             <div class="email1">
 <form method="post">
@@ -19,7 +20,7 @@
     {% endif %}
     
             <h1 class="h3 mb-3 font-weight-normal connecter">Connectez-vous</h1>
-    <div class="V8">
+    <div class="V8"></div>
         <div class="form1">
             <div class="email1">
                 <label for="inputEmail">Email</label>
@@ -31,8 +32,9 @@
             <input type="hidden" name="_csrf_token"
                 value="{{ csrf_token('authenticate') }}"
         </div>
-    </div>
-    >
+        
+    
+    
 
     {#
         Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
