@@ -381,8 +381,9 @@
 .form {
   background: white;
   width: 69%;
-  height: 66%;
+  height: 59%;
   margin-left: 19%;
+  position: absolute;
  
 }
 .soumettre{
@@ -390,14 +391,65 @@
   color: white;
   border-color: rgba(250,67,24,1);
   width: 30%;
-  margin-top: 20%;
-  margin-left: 36%;
+  margin-left: 31%;
+  font-size: 120%;
 }
-.email{
+.regi{
   width: 10%;
   margin-left: 35%;
-  z-index: 1 1;
+  z-index: -1;
 }
+.societe{
+  font-size: 100%;
+  position: relative;
+  left: 5%;
+  margin-top: 7%;
+}
+.siret{
+  font-size: 100%;
+  position: relative;
+  left: 38%;
+  margin-top: -3%;
+}
+.nom{
+  font-size: 100%;
+  position: relative;
+  left: 71%;
+  margin-top: -3%;
+}
+.prenom{
+  font-size: 100%;
+  position: relative;
+  left: 9%;
+  margin-top: 7%;
+}
+.fonction{
+  font-size: 100%;
+  position: relative;
+  left: 35%;
+  margin-top: -3%;
+}
+.mail{
+  font-size: 100%;
+  position: relative;
+  left: 71%;
+  margin-top: -3%;
+}
+.password{
+  font-size: 100%;
+    position: relative;
+    left: 21%;
+    margin-top: 4%;
+}
+.agree{
+  font-size: 100%;
+    position: relative;
+    left: 21%;
+   
+}
+
+
+
 /*login*/
 .login{
   background-color: black;
@@ -485,4 +537,9 @@
   width: 21%;
   margin-left: 41%;
   margin-top: 20px;
+}
+/*chart-js*/
+.chart-container{
+  width: 30%;
+  margin: 20px;
 }

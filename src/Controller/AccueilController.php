@@ -79,7 +79,27 @@ class AccueilController extends AbstractController
 
         ]
         );
- 
-       
     }
+
+    /**
+     * @Route("/stats", name="stats")
+     */
+    public function statisstiques(BilanRepository $repo){
+
+        $depenses= $repo->findAll();
+
+        $mois=[];
+        $depens=[];
+
+        foreach($depenses as $depense){
+            $mois[] = $depense->getclient();
+            $depens[] = count($depense->getVolumes());
+        }
+        
+
+        return $this->render('accueil/membre.html.twig'[
+            
+            ]);
+    }
+    
 }

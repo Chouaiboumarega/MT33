@@ -5,25 +5,20 @@
 {% block body %}
 
 <div class="V8">
-    <p class="texte"> PILOTEZ VOTRE ACTIVITÉ DE TRANSPORT, OPTIMISER VOS DEPENSES, <br\> GERER VOS COMMANDES ET FACTURATION</p>
-    <h1 class="optimiser">Optimiser  votre logistique  en temps réel  avec le systeme de gestion de transport  le plus performant de Bordeaux Lac </h1>
 </div>
-<div class="fonct">
-    <h1 class="fon">Fonctionnalités</h1>
-</div>
+ 
+
 {% if is_granted('ROLE_ADMIN') %}
     <button class="client"><a class="cli" href="">Tous nos clients</a></button>
     <button class="clients"><a class="clie" href=""user</a>Gestion des roles</button>
   {% endif %}
-<div class="slider-container slider-1">
-    <div class="slider">
-    <p>SECURITE TRANSPORT</p>
-    </div>
-    <p>GESTION PARC</p>
-    <p>MANAGEMENT CHAUFFEURS</p>
-    <p>KPI TRANSPORT</p>
-    </div>
+<div class="chart-container">
+    <canvas id="myChart"></canvas>
+    <canvas id="myDep"></canvas>
 </div>
+{% block javascripts %}
+  
+{% endblock %}
 
 <!--<div class="v11_85">
     <div class="v11_82">
@@ -38,4 +33,46 @@
         </div>
     </div>
 </div>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+<script>const ctx = document.getElementById('myChart');
+const config = {
+  type: 'doughnut',
+  data: {
+    labels: ['Janv-24', 'Févr-24', 'Mars-24', 'Avr-24', 'Mai-24'],
+    datasets: [{
+      label: 'Livraisons',
+      data: [432, 543, 324, 843, 456],
+      backgroundColor: [
+        'rgb(255, 99, 132)',
+        'rgb(54, 162, 235)',
+        'rgb(255, 205, 86)',
+        'rgb(75, 192, 192)',
+        'rgb(153, 102, 255)'
+      ],
+      hoverOffset: 7
+    }]
+  }
+};
+new Chart(ctx, config);
+
+const cty = document.getElementById('myDep').getContext('2d');
+const configu = {
+  type: 'line',
+  data: {
+    labels: ['Janv-24', 'Févr-24', 'Mars-24', 'Avr-24', 'Mai-24'],
+    datasets: [{
+      label: 'Depenses',
+      data: [432, 543, 324, 843, 456],
+      backgroundColor: [
+        'rgb(255, 99, 132)',
+        'rgb(54, 162, 235)',
+        'rgb(255, 205, 86)',
+        'rgb(75, 192, 192)',
+        'rgb(153, 102, 255)'
+      ],
+      hoverOffset: 7
+    }]
+  }
+};
+new Chart(cty, configu);</script>
 {% endblock %}

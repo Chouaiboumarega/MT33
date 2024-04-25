@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use App\Form\EditUserType;
+use App\Repository\BilanRepository;
 use Symfony\Component\HttpFoundation\User;
 use App\Repository\UserRepository;
 use Symfony\Component\Routing\Annotation\Route;
@@ -68,4 +69,6 @@ public function edituser(Request $request,UserRepository $repo,$id)
         $this->addFlash('notice','suppression reussie!!');
         return $this->redirectToRoute('membre');
     }
+    
+        
 }

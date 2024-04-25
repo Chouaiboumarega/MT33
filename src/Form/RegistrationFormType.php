@@ -32,7 +32,7 @@ class RegistrationFormType extends AbstractType
                 'label' => 'Raison sociale',
                 ])
             ->add('siret',$type = null, $options = [
-                'label' => 'Numero de Siret',
+                'label' => 'Siret',
                 ])
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
