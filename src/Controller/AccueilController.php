@@ -35,6 +35,25 @@ class AccueilController extends AbstractController
             'controller_name' => 'AccueilController',
         ]);
     }
+
+    /**
+     * @Route("/tracking", name="tracking")
+     */
+    public function tracking(): Response
+    {
+        return $this->render('accueil/tracking.html.twig', [
+            'controller_name' => 'AccueilController',
+        ]);
+    }
+    /**
+     * @Route("/brouillon", name="brouillon")
+     */
+    public function brouillon(): Response
+    {
+        return $this->render('accueil/brouillon.html.twig', [
+            'controller_name' => 'AccueilController',
+        ]);
+    }
     /**
      * @Route("/bilan", name="bilan")
      */
@@ -98,7 +117,8 @@ class AccueilController extends AbstractController
         
 
         return $this->render('accueil/membre.html.twig'[
-            
+           
+
             ]);
     }
     

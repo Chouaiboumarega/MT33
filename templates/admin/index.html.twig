@@ -6,11 +6,86 @@
 <div class="V8">
 </div>
  
+<div class="">
+
 
 {% if is_granted('ROLE_ADMIN') %}
-    <button class="client"><a class="cli" href="">Tous nos clients</a></button>
-    <button class="clients"><a class="clie" href=""user</a>Gestion des roles</button>
-  {% endif %}
-   
+    <button class="roles"><a class="role" href="{{path ('user')}}">Tous nos clients</a></button>
+    <p class="d-inline-flex gap-1">
+      
+        <button type="button" class="btn colore" data-bs-toggle="button">Toggle button</button>
+        <button type="button" class="btn active" data-bs-toggle="button" aria-pressed="true">Active toggle button</button>
+       
+</p>
+    </p>
+    <p class="d-inline-flex gap-1">
+      <button type="button" class="btn btn-primary color" data-bs-toggle="button">General</button>
+      <button type="button" class="btn btn-primary active" data-bs-toggle="button" aria-pressed="true">Facturation</button>
+      <button type="button" class="btn btn-primary" data-bs-toggle="button">Volumes</button>
+      <button type="button" class="btn btn-primary active" data-bs-toggle="button" aria-pressed="true">Carburant</button>
+     
+    </p>
 
+
+
+
+    <div> Rotations</div>
+<div> Volumes transportés</div>
+<div> Kilometres parcourus</div>
+<div> Depenses transport</div>
+<div> Chiffre d'affaire</div>
+{% endif %}
+
+
+
+
+
+</div>  
+<div class="chart-container">
+    <canvas class="char" id="myChart"></canvas>
+    <canvas class="dep" id="myDep"></canvas>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+<script>const ctx = document.getElementById('myChart');
+const config = {
+  type: 'doughnut',
+  data: {
+    labels: ['Janv-24', 'Févr-24', 'Mars-24', 'Avr-24', 'Mai-24'],
+    datasets: [{
+      label: 'Livraisons',
+      data: [432, 543, 324, 843, 456],
+      backgroundColor: [
+        'rgb(255, 99, 132)',
+        'rgb(54, 162, 235)',
+        'rgb(255, 205, 86)',
+        'rgb(75, 192, 192)',
+        'rgb(153, 102, 255)'
+      ],
+      hoverOffset: 7
+    }]
+  }
+};
+new Chart(ctx, config);
+
+const cty = document.getElementById('myDep').getContext('2d');
+const configu = {
+  type: 'line',
+  data: {
+    labels: ['Janv-24', 'Févr-24', 'Mars-24', 'Avr-24', 'Mai-24'],
+    datasets: [{
+      label: 'Depenses',
+      data: [432, 543, 324, 843, 456],
+      backgroundColor: [
+        'rgb(255, 99, 132)',
+        'rgb(54, 162, 235)',
+        'rgb(255, 205, 86)',
+        'rgb(75, 192, 192)',
+        'rgb(153, 102, 255)'
+      ],
+      hoverOffset: 7
+    }]
+  }
+};
+new Chart(cty, configu);</script>
 {% endblock %}

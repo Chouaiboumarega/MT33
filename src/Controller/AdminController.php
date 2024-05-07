@@ -69,6 +69,5 @@ public function edituser(Request $request,UserRepository $repo,$id)
         $this->addFlash('notice','suppression reussie!!');
         return $this->redirectToRoute('membre');
     }
-    
         
 }

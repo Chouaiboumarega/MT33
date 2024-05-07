@@ -50,9 +50,9 @@ class RegistrationController extends AbstractController
     public function update(Request $request, UserRepository $repo,$id): Response
     {
         $user=$repo->find($id);
-        $form = $this->createForm(RegistrationFormType::class, $user);
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid())#si le formulaire est soumis et que les données sont valides on soumets
+        $registrationForm = $this->createForm(RegistrationFormType::class, $user);
+        $registrationForm->handleRequest($request);
+        if ($registrationForm->isSubmitted() && $registrationForm->isValid())#si le formulaire est soumis et que les données sont valides on soumets
         {
             $sendDatabase=$this->getDoctrine()
                                ->getManager();
@@ -63,7 +63,7 @@ class RegistrationController extends AbstractController
         }
         return $this->render('registration/update.html.twig', [
             'controller_name' => 'RegistrationController',
-            'registerForm'=> $form->createView() # il demande de creer une vue 
+            'registrationForm'=> $registrationForm->createView() # il demande de creer une vue 
         ]);
     }
 

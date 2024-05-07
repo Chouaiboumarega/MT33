@@ -3,23 +3,56 @@
 {% block title %}Liste des utilisateurs{% endblock %}
 
 {% block body %}
-    <h1 class="user">Liste des utilisateurs</h1>
-<div class="liste">
-    <table>
-        <thead>
-            <th>ID</th>
-            <th>Email</th>
-            <th>Rôles</th>
+<div class="V8">
+</div>
+    <h1 class="titre">Nos clients</h1>
+
+    <div class="container">
+  <div class="row">
+   {% for users in users %}
+    <div class="col-md-3 ">
+      <div class="card" style="width: 18rem;  margin-bottom: 20px;">
+        <div class="card-body">
+          
+          
+          <ul style="list-style-type: none;  margin: 5px 0;  padding: 0;">
+            <li>ID:{{users.id }}</li>
+            <li>@: {{users.email}}</li>
+            {% for role in users.roles %}
+                {% if role == "ROLE_ADMIN" %}
+                    Administrateur
+                    
+                {% elseif role == "ROLE_USER" %}
+                    Utilisateur
+                {% endif %}
+            {% endfor %}
+            
+          </ul>
+          <button class="modif" type="button"><a class="modifier" href="{{ path('edituser', {'id': users.id}) }}">Modifier</a></button>
+          <button class="supp" type=""><a class="supprimer" href="{{ path('deleteuser', {'id': users.id}) }}">Supprimer</a></button>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{#<div class="">
+    <table class="titres">
+        <thead >
+            <th class="id">ID</th>
+            <th class="mai">Email</th>
+            <th class="rol">Rôles</th>
             <th class="action">Actions</th>
         </thead>
-        <tbody>
-            {# On boucle sur les utilisateurs #}
+        <tbody>#}
+            {# On boucle sur les utilisateurs 
             {% for users in users %}
-                <tr>
-                    <td>{{ users.id }}</td>
-                    <td>{{ users.email }}</td>
-                    <td>
-                        {# On boucle sur les rôles #}
+                <div>
+                    <div class="id">{{ users.id }}</div>
+                    <div class="mai">{{ users.email }}</div>
+                    <div class="rol">
+                        {# On boucle sur les rôles 
                         {% for role in users.roles %}
                             {% if role == "ROLE_USER" %}
                                 Utilisateur
@@ -27,17 +60,18 @@
                                 Administrateur
                             {% endif %}
                         {% endfor %}
-                    </td>
+                    </div>
                    
-                    <td><a  class="modi" href="{{ path('edituser', {'id': users.id}) }}">Modifier</a></td>
-                    <td><a class="supp" href="{{ path('deleteuser', {'id': users.id}) }}">Supprimer</a></td>
-                </tr>
+                    <div class="modif"><a  class="modifier" href="{{ path('edituser', {'id': users.id}) }}">Modifier</a></div>
+                    <div class="supp"><a class="supprimer" href="{{ path('deleteuser', {'id': users.id}) }}">Supprimer</a></div>
+                </div>
                 
             {% else %}
                 <p>Aucun utilisateur inscrit</p>
             {% endfor %}
+
         </tbody>
     </table>
-</div>
+</div>#}
 
 {% endblock %}

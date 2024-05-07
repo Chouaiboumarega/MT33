@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier profil{% endblock %}
+
+{% block body %}
+    <h1 class="register">Modifier profil</h1>
+    <div class="V8">MM
+    </div>
+        <div class="form">
+         
+            <div class=""></div>
+           
+        
+                {{ form_start(registrationForm) }}
+                <div class="societe">
+                    {{ form_row(registrationForm.societe) }}
+                </div>
+                <div class="siret">
+                    {{ form_row(registrationForm.siret) }}
+                </div>
+                <div class="nom">
+                    {{ form_row(registrationForm.nom) }}
+                </div>
+                <div class="prenom">
+                    {{ form_row(registrationForm.prenom) }}
+                </div>
+                <div class="fonction">
+                    {{ form_row(registrationForm.fonction) }}   
+                </div>
+                <div class="mail">      
+                    {{ form_row(registrationForm.email) }}
+                </div>
+                <div class="password">
+                    {{ form_row(registrationForm.plainPassword, {
+                        label: 'Password'
+                    }) }} </div>
+                    <div class="agree">
+                    {{ form_row(registrationForm.agreeTerms) }} </div>
+
+                    <button type="submit" class="soumettre">Valider</button>
+                {{ form_end(registrationForm) }}
+        </div>
+    </div>
+{% endblock %}

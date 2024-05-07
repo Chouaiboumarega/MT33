@@ -25,6 +25,18 @@ class EditUserType extends AbstractType
                 'required' => true,
                 'attr' => ['class' =>'form-control'],
             ])
+            ->add('prenom',$type = null, $options = [
+                'label' => 'Prenom',
+                ])
+            ->add('fonction',$type = null, $options = [
+                'label' => 'Fonction',
+                ])
+            ->add('societe',$type = null, $options = [
+                'label' => 'Raison sociale',
+                ])
+            ->add('siret',$type = null, $options = [
+                'label' => 'Siret',
+                ])
             ->add('roles', ChoiceType::class,[
                 'choices' => [
                     'Utilisateur' => 'ROLE_USER',
