@@ -5,31 +5,31 @@
 {% block body %}
 <div class="V8">
     </div>
-    
-<h1 class="facturation">Facturation</h1>
-<div class="facture">
+<h1 class="vehicule">vehicule</h1>
+<div class="vehicule">
     {{ form_start(form) }}
         <div class="forme">
-        {{ form_row(form.date) }}
+        {{ form_row(form.matricule) }}
         </div>
          <div class="forme1">
-        {{ form_row(form.client) }}
+        {{ form_row(form.assurance) }}
         </div>
         <div class="forme2">
-        {{ form_row(form.colis) }}
+        {{ form_row(form.controle) }}
         </div>
         <div class="forme3">
-        {{ form_row(form.prixht) }}
+        {{ form_row(form.circulation) }}
         </div>
         <div class="forme4">
-        {{ form_row(form.prixttc) }}
+        {{ form_row(form.entretien) }}
+         </div>
+          <div class="forme4">
+        {{ form_row(form.kilometres) }}
          </div>
     </div>
     
         <button class="valider" type="submit">Valider</button>
    
     {{ form_end(form) }}
-<div class="footer">
-    {% include('_footer.html.twig') %}
-</div>
+
 {% endblock %}

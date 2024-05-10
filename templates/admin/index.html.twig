@@ -10,30 +10,20 @@
 
 
 {% if is_granted('ROLE_ADMIN') %}
-    <button class="roles"><a class="role" href="{{path ('user')}}">Tous nos clients</a></button>
-    <p class="d-inline-flex gap-1">
-      
-        <button type="button" class="btn colore" data-bs-toggle="button">Toggle button</button>
-        <button type="button" class="btn active" data-bs-toggle="button" aria-pressed="true">Active toggle button</button>
-       
-</p>
-    </p>
-    <p class="d-inline-flex gap-1">
-      <button type="button" class="btn btn-primary color" data-bs-toggle="button">General</button>
-      <button type="button" class="btn btn-primary active" data-bs-toggle="button" aria-pressed="true">Facturation</button>
-      <button type="button" class="btn btn-primary" data-bs-toggle="button">Volumes</button>
-      <button type="button" class="btn btn-primary active" data-bs-toggle="button" aria-pressed="true">Carburant</button>
-     
-    </p>
-
-
-
-
-    <div> Rotations</div>
-<div> Volumes transportés</div>
-<div> Kilometres parcourus</div>
-<div> Depenses transport</div>
-<div> Chiffre d'affaire</div>
+    <div class="dashboard">
+    <div class="card">
+      <a href="{{path ('user')}}"><img class="users" src="../asset/images/user.png" alt=""></a>
+    </div>
+    <div class="card">
+      <a href="{{path ('vehicules')}}"><img class="users" src="../asset/images/vehicule.png" alt=""></a>
+    </div>
+    <div class="card">
+       <a href="{{path ('chauffeurs')}}"><img class="users" src="../asset/images/chauffeur.png" alt=""></a>
+    </div>
+    <div class="card">
+      <a href=""><img class="users" src="../asset/images/kpi.png" alt=""></a>
+    </div>
+  </div>
 {% endif %}
 
 

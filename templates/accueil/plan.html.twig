@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<div class="V8">
+</div>
+<div class="piloter">
+        <div class="dynamic-text1">
+        <span class="text1">Plan de transport : 5 étapes pour optimiser ses flux logistiques</span>
+        </div>
+    </div>
+    <img class="transport" src="../asset/images/transport.jpg" alt="">
+    <h1 class="plan">Dans un contexte particulièrement concurrentiel, il est nécessaire pour les professionnels de la supply chain de valoriser chacune des ressources <br /> disponibles au sein de leur organisation, et de réduire les coûts opérationnels afin de maximiser le ROI (retour sur investissement) de l’activité.</h1>
+    <h1 class="plan1">En tant que transporteur, la construction d’un plan de transport fiable est indispensable.</h1>
+    <h2 class="plan2">La notion de plan de transport présente la stratégie la plus efficiente pour l’acheminement de marchandises  ou items, d’un point A à un point B. <br/> Et ce, en utilisant au mieux les ressources humaines, techniques et matérielles disponibles à un moment donné.<br/><br/>
+        En d’autres mots, créer un plan de transport consiste d’une part à définir les rotations des flux d’acheminements et de livraisons au sein de votre organisation, <br/> et d’autre part d’affecter à chacun de ces flux  un conducteur ainsi qu’un véhicule. Ce plan représente alors le réseau de <br/> votre entreprise, les différentes connexions des postes et services, mais également les horaires de départ  et d’arrivée des véhicules pour chaque trajet.</h2>
+    <h1 class="plan3"> Attention, un plan de transport doit prendre en compte l’ensemble des ressources humaineset matérielles <br/> à votre disposition, y compris les prestataires de services auxquels  votre exploitation peut faire appel.</h1>
+    <h2 class="plan4">Maintenant qu’on connaît la définition d’un plan de transport, à quoi sert-il ? Il a plusieurs fonctions :</h2>
+    <div class="fonctions">
+        <li>Planifier les occupations des quais de chargement et déchargement afin d’éviter les embouteillages</li>
+        <li>Visualiser les ordres de transport</li>
+        <li>Organiser les tournées de manière à y associer un conducteur et un véhicule</li>
+        <li>Mettre en place des KPI transport</li>
+    </div>
+    <button type="button" class="btn btn-light bouton"><a class="optimise" href="{{path ('contact')}}"><h1>5 Etapes pour optimiser <br/> ses flus de transport <br/> <h2 class="profite">J'en profite</h2></h1></H1><img class="camion" src="../asset/images/camion.png" alt=""></a></button>
+
+<script>
+const text = document.querySelector('.text');
+
+// Change the text after 5 seconds
+setTimeout(() => {
+  text.textContent = ' Plan de transport : 5 étapes pour optimiser ses flux logistiques';
+}, 5000);
+const button1 = document.getElementById('show-hide-button1');
+const textContainer1 = document.getElementById('text-container1');
+
+button.addEventListener('click', () => {
+  if (textContainer1.classList.contains('hidden')) {
+    textContainer1.classList.remove('hidden');
+  } else {
+    textContainer1.classList.add('hidden');
+  }
+});
+
+
+</script>
+<div class="footer">
+    {% include('_footer.html.twig') %}
+</div>
+
+{% endblock %}

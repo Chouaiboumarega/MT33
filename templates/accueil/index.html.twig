@@ -4,39 +4,99 @@
 
 {% block body %}
 
+
+ 
+
+{% if is_granted('ROLE_USER') %}
+  <div class="dashboard">
+    <div class="card">
+      <a class="parc" href="{{path ('chauffeurs')}}">Chauffeurs</a>
+    </div>
+    <div class="card">
+      <a class="parc" href="{{path ('vehicules')}}">Vehicules</a>
+    </div>
+    <div class="card">
+      <a href="">Maintenance</a>
+      
+    </div>
+  </div>
+  {% endif %}
 <canvas id="canvas" width="800" height="200"></canvas>
 
 <div class="V8">
-
-    <p class="texte"> PILOTEZ VOTRE ACTIVITÉ DE TRANSPORT, OPTIMISER VOS DEPENSES, <br\> GERER VOS COMMANDES ET FACTURATION</p>
-    <h1 class="optimiser">Optimiser  votre logistique  en temps réel  avec le systeme de gestion de transport  le plus performant de Bordeaux Lac </h1>
+    <div class="piloter">
+        <div class="dynamic-text">
+        <span class="text">Pilotez votre activité de transport et optimiser  votre logistique  en temps réel avec</span>
+        </div>
+    </div>
 </div>
 <div class="fonct">
     <h1 class="fon">Fonctionnalités</h1>
 </div>
+ 
 
-<div class="slider-container slider-1">
-    <div class="slider">
-    <p>SECURITE TRANSPORT</p>
-    </div>
-    <p>GESTION PARC</p>
-    <p>MANAGEMENT CHAUFFEURS</p>
-    <p>KPI TRANSPORT</p>
-    </div>
+<div class="fonct1">
+    <p class="">SECURITE TRANSPORT</p>
+        <button class="but" id="show-hide-button1">lire plus</button>
+        <div id="text-container1" class="hidden">
+        <p>This is the text that will be shown and hidden.</p>
+        </div>
 </div>
+<div class="fonct1">
+    <p class="">GESTION PARC</p>
+        <button class="but" id="show-hide-button">lire plus</button>
+        <div id="text-container" class="hidden">
+        <p>This is the text that will be shown and hidden.</p>
+        </div>
+</div>
+<div class="fonct1">
+    <p class="">MANAGEMENT CHAUFFEURS</p>
+        <button class="but" id="show-hide-button">lire plus</button>
+        <div id="text-container" class="hidden">
+        <p>This is the text that will be shown and hidden.</p>
+        </div>
+</div>
+<div class="fonct1">
+    <p class="">KPI TRANSPORT</p>
+        <button class="but" id="show-hide-button">lire plus</button>
+        <div id="text-container" class="hidden">
+        <p>This is the text that will be shown and hidden.</p>
+        </div>
+</div>
+    
 
-<!--<div class="v11_85">
-    <div class="v11_82">
-        <div class="v11_73"></div>
-        <span class="v11_74">SECURITE TRANSPORT</span>
-    </div>
-    <div class="v11_79">
-        <div class="v11_81">
-        <div class="v11_80">
-            <span class="v11_78">LIre plus </span>
-        </div>
-        </div>
-    </div>
-</div>-->
-<script></script>
+
+
+<script>
+const text = document.querySelector('.text');
+
+// Change the text after 5 seconds
+setTimeout(() => {
+  text.textContent = '   le systeme de gestion de transport le plus performant de Bordeaux Lac!';
+}, 5000);
+const button1 = document.getElementById('show-hide-button1');
+const textContainer1 = document.getElementById('text-container1');
+
+button.addEventListener('click', () => {
+  if (textContainer1.classList.contains('hidden')) {
+    textContainer1.classList.remove('hidden');
+  } else {
+    textContainer1.classList.add('hidden');
+  }
+});
+
+const button2 = document.getElementById('show-hide-button2');
+const textContainer2 = document.getElementById('text-container2');
+
+button.addEventListener('click', () => {
+  if (textContainer2.classList.contains('hidden')) {
+    textContainer2.classList.remove('hidden');
+  } else {
+    textContainer2.classList.add('hidden');
+  }
+});
+</script>
+<div class="footer">
+    {% include('_footer.html.twig') %}
+</div>
 {% endblock %}
