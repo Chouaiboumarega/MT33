@@ -761,7 +761,7 @@ font-size: 30px;
 /*chauffeurs*/
 .container {
   max-width: 90%;
-  margin: 50px auto;
+  margin: 12px auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -1281,3 +1281,5 @@ width: 100%;
  width: 100px;
  margin-top: 0%;
 }
+
+/*Dashboard*/
