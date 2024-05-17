@@ -117,7 +117,7 @@ public function editeuser(Request $request,UserRepository $repo,$id)
    
         $transporteur1= $repo->find($id);
 
-        return $this->render('Admin/transporteur1.html.twig', [
+        return $this->render('Admin/vehicule/transporteur1.html.twig', [
             'controller_name' => 'AdminController',
             "transporteur1"=>$transporteur1,
         ]) ;
@@ -130,7 +130,7 @@ public function editeuser(Request $request,UserRepository $repo,$id)
    
         $transporteur2= $repo->find($id);
 
-        return $this->render('Admin/transporteur2.html.twig', [
+        return $this->render('Admin/chauffeur/transporteur2.html.twig', [
             'controller_name' => 'AdminController',
             "transporteur2"=>$transporteur2,
         ]) ;
@@ -141,7 +141,7 @@ public function editeuser(Request $request,UserRepository $repo,$id)
      */
     public function vehicules(VehiculeRepository $repo): Response
     {
-        return $this->render('admin/vehicules.html.twig', [
+        return $this->render('admin//vehicule/vehicules.html.twig', [
             'vehicules'=> $repo->findAll(),
            
         ]);
@@ -163,7 +163,7 @@ public function editvehicule(Request $request,VehiculeRepository $repo,$id)
             $this->addFlash('notice','!!');
             return $this->redirectToRoute('vehicules');
         }
-        return $this->render('admin/editvehicule.html.twig', [
+        return $this->render('admin/vehicule/editvehicule.html.twig', [
             'controller_name' => 'AdminController',
             'editVehiculeForm'=> $form->createView() 
         ]);
@@ -188,7 +188,7 @@ public function editvehicule(Request $request,VehiculeRepository $repo,$id)
      */
     public function chauffeurs(ChauffeursRepository $repo): Response
     {
-        return $this->render('admin/chauffeurs.html.twig', [
+        return $this->render('admin/chauffeur/chauffeurs.html.twig', [
             'chauffeurs'=> $repo->findAll(),
            
         ]);
@@ -210,7 +210,7 @@ public function editchauffeur(Request $request,ChauffeursRepository $repo,$id)
             $this->addFlash('notice','!!');
             return $this->redirectToRoute('chauffeurs');
         }
-        return $this->render('admin/editchauffeur.html.twig', [
+        return $this->render('admin/chauffeur/editchauffeur.html.twig', [
             'controller_name' => 'AdminController',
             'editChauffeurForm'=> $form->createView() 
         ]);

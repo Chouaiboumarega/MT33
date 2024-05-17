@@ -5,41 +5,34 @@
 {% block body %}
 <div class="V8">
 </div>
-
-
-
-    
-
-
-
-
+<button class="annuler"><a class="" href="{{path ('chauffeurs')}}">Annuler</a></button>
 <h1 class="chauffeur">Nouveau chauffeur</h1>
 <div class="chauffeur">
     {{ form_start(form) }}
-        <div class="forme">
+        <div class="nomchauffeur">
         {{ form_row(form.nom) }}
         </div>
-         <div class="forme1">
+         <div class="prenomchauffeur">
         {{ form_row(form.prenom) }}
         </div>
-        <div class="forme2">
+        <div class="permis">
         {{ form_row(form.permis) }}
         </div>
-        <div class="forme3">
+        <div class="naissance">
         {{ form_row(form.date) }}
         </div>
-        <div class="forme4">
+        <div class="embauche">
         {{ form_row(form.embauche) }}
          </div>
-          <div class="forme4">
+          <div class="contrat">
         {{ form_row(form.contrat) }}
          </div>
-         <div class="forme4">
+         <div class="societe">
         {{ form_row(form.societe) }}
          </div>
     </div>
     
-        <button class="valider" type="submit">Valider</button>
+        <button class="validerchauffeur" type="submit">Valider</button>
    
     {{ form_end(form) }}
 <div class="footer">

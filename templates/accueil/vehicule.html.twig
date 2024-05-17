@@ -5,30 +5,30 @@
 {% block body %}
 <div class="V8">
     </div>
-<h1 class="vehicule">vehicule</h1>
+<h1 class="vehicule">Nouveau Véhicule</h1>
 <div class="vehicule">
     {{ form_start(form) }}
-        <div class="forme">
+        <div class="matricule">
         {{ form_row(form.matricule) }}
         </div>
-         <div class="forme1">
+         <div class="assurance">
         {{ form_row(form.assurance) }}
         </div>
-        <div class="forme2">
+        <div class="controle">
         {{ form_row(form.controle) }}
         </div>
-        <div class="forme3">
+        <div class="circulation">
         {{ form_row(form.circulation) }}
         </div>
-        <div class="forme4">
+        <div class="entretien">
         {{ form_row(form.entretien) }}
          </div>
-          <div class="forme4">
+          <div class="kilometres">
         {{ form_row(form.kilometres) }}
          </div>
     </div>
     
-        <button class="valider" type="submit">Valider</button>
+        <button class="validervehicule" type="submit">Valider</button>
    
     {{ form_end(form) }}
 

@@ -47,10 +47,7 @@ class Vehicule
      */
     private $kilometres;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $societe;
+   
 
     public function getId(): ?int
     {
@@ -129,15 +126,5 @@ class Vehicule
         return $this;
     }
 
-    public function getSociete(): ?string
-    {
-        return $this->societe;
-    }
-
-    public function setSociete(string $societe): self
-    {
-        $this->societe = $societe;
-
-        return $this;
-    }
+   
 }
